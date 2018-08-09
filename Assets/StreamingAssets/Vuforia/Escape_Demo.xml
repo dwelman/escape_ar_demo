@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="path" size="0.250000 0.250000" />
+    <ImageTarget name="start" size="0.250000 0.250000" />
+    <ImageTarget name="star" size="0.250000 0.250000" />
+    <ImageTarget name="bbd_logo" size="0.100000 0.043200" />
+    <ImageTarget name="octopus_tattoo" size="0.050000 0.055600" />
+    <ImageTarget name="owl_tattoo" size="0.050000 0.062602" />
+    <ImageTarget name="kingLogo_bw" size="0.200000 0.200000" />
+  </Tracking>
+</QCARConfig>
