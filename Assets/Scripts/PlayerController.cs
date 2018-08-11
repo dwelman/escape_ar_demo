@@ -25,23 +25,49 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Camera mainCamera;
+	[SerializeField]
+	private Animator playerAnimator;
 
 	[SerializeField]
 	private ToggleStickBehaviour toggleStick;
+	[SerializeField]
+	private Transform startPosition;
+
 
     // Use this for initialization
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<CapsuleCollider>();
+		playerAnimator = GetComponent<Animator>();
+		ResetCharacter();
     }
 
     // Update is called once per frame
     void Update()
     {
+		if (CheckIfGrounded())
+		{
+			canJump = true;
+			playerAnimator.SetBool("IsJumping", false);
+		}
+		else
+		{
+			canJump = false;
+			playerAnimator.SetBool("IsJumping", true);
+		}
         Physics.gravity = gravityWell.up * -9.8f;
 
         velocity = (toggleStick.Horizontal() * gravityWell.right) + (toggleStick.Vertical() * gravityWell.forward);
+		if (velocity != Vector3.zero)
+		{
+			playerAnimator.SetBool("IsWalking", true);
+		}
+		else
+		{
+			playerAnimator.SetBool("IsWalking", false);
+		}
+		transform.LookAt(transform.position + velocity);
         if (Input.GetButtonDown("Jump") && canJump)
         {
             Jump();
@@ -64,30 +90,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.transform.tag == "Ground")
-        {
-            canJump = true;
-            Ground gc = collider.gameObject.GetComponent<Ground>();
-            if (gc != null)
-            {
-                gravityWell = gc.GetGravityWell();
-            }
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.transform.tag == "Ground")
-        {
-            canJump = false;
-        }
-    }
+	private bool CheckIfGrounded()
+	{
+		float radius = collider.radius * 0.9f;
+		Vector3 pos = (transform.position - (Vector3.up * (collider.height / 2)) + Vector3.up * (radius * 0.9f));
+		Collider[] colliders = Physics.OverlapSphere(pos, radius, jumpableMask);
+		if (colliders.Length > 0)
+		{
+			Ground gc = colliders[0].gameObject.GetComponent<Ground>();
+			if (gc != null)
+			{
+				gravityWell = gc.GetGravityWell();
+			}
+			return (true);
+		}
+		return (false);
+	}
 
     private void RotateGravityWell()
     {
+		Vector3 currentUp = gravityWell.up;
         //gravityWell.transform.LookAt(transform.position + transform.TransformDirection(localPos));
         gravityWell.right = mainCamera.transform.right;
+		gravityWell.up = currentUp;
     }
+
+	public void ResetCharacter()
+	{
+		transform.position = startPosition.position;
+	}
 }
