@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		//movespeed *= transform.localScale.x;
-		//jumpHeight *= transform.localScale.x;
 		rigidbody = GetComponent<Rigidbody>();
 		collider = GetComponent<CapsuleCollider>();
 	}
@@ -49,12 +47,12 @@ public class PlayerController : MonoBehaviour
 			Jump();
 			canJump = false;
 		}
+		RotateGravityWell();
 	}
 
 	private void FixedUpdate()
 	{
 		rigidbody.MovePosition(transform.position + (velocity.normalized * movespeed * Time.deltaTime));
-		//rigidbody.MovePosition(transform.position + (fakeGravity * Time.deltaTime));
 	}
 
 	private void Jump()
@@ -81,5 +79,11 @@ public class PlayerController : MonoBehaviour
 		{
 			canJump = false;
 		}
+	}
+
+	private void RotateGravityWell()
+	{
+		//gravityWell.transform.LookAt(transform.position + transform.TransformDirection(localPos));
+		gravityWell.right = mainCamera.transform.right;
 	}
 }
