@@ -67,7 +67,11 @@ public class PlayerController : MonoBehaviour
 		if (collision.gameObject.transform.tag == "Ground")
 		{
 			canJump = true;
-			gravityWell = collider.gameObject.GetComponent<Ground>().GetGravityWell();
+			Ground gc = collider.gameObject.GetComponent<Ground>();
+			if (gc != null)
+			{
+				gravityWell = gc.GetGravityWell();
+			}
 		}
 	}
 
