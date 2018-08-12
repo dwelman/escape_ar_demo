@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114710977952564414}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,6 +505,8 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   playerAnimator: {fileID: 0}
   toggleStick: {fileID: 0}
+  startPosition: {fileID: 0}
+  stars: 0
 --- !u!136 &136715715725609174
 CapsuleCollider:
   m_ObjectHideFlags: 1

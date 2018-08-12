@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private Transform startPosition;
 
+	[SerializeField]
+	private int stars = 0;
+
 
     // Use this for initialization
     void Start()
@@ -118,5 +121,10 @@ public class PlayerController : MonoBehaviour
 	public void ResetCharacter()
 	{
 		transform.position = startPosition.position;
+	}
+
+	public void CollectStar()
+	{
+		stars++;
 	}
 }
