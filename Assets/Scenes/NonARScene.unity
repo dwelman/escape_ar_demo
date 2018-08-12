@@ -492,7 +492,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1305401708}
         m_MethodName: Jump
         m_Mode: 1
         m_Arguments:
@@ -638,6 +638,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1252072504}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1305401708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114710977952564414, guid: 6bda9b61170893143aa1bafa435f1c7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 55680166}
+  m_Script: {fileID: 11500000, guid: e99199ce2f0152a4481acdaff5242cb9, type: 3}
 --- !u!1 &1656989459
 GameObject:
   m_ObjectHideFlags: 0
