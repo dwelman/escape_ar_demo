@@ -33,9 +33,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private Transform startPosition;
 
-	[SerializeField]
-	private int stars = 0;
-
+	private GameManager gameManager;
 
     // Use this for initialization
     void Start()
@@ -43,6 +41,7 @@ public class PlayerController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<CapsuleCollider>();
 		playerAnimator = GetComponent<Animator>();
+		gameManager = mainCamera.GetComponent<GameManager>();
 		ResetCharacter();
     }
 
@@ -104,6 +103,7 @@ public class PlayerController : MonoBehaviour
 			if (gc != null)
 			{
 				gravityWell = gc.GetGravityWell();
+				transform.SetParent(gc.transform);
 			}
 			return (true);
 		}
@@ -121,10 +121,11 @@ public class PlayerController : MonoBehaviour
 	public void ResetCharacter()
 	{
 		transform.position = startPosition.position;
+		transform.SetParent(startPosition);
 	}
 
-	public void CollectStar()
+	public void CollectStar(string name)
 	{
-		stars++;
+		gameManager.AddStar(name);
 	}
 }
