@@ -33,15 +33,12 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private Transform startPosition;
 
-	private GameManager gameManager;
-
     // Use this for initialization
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<CapsuleCollider>();
 		playerAnimator = GetComponent<Animator>();
-		gameManager = mainCamera.GetComponent<GameManager>();
 		ResetCharacter();
     }
 
@@ -126,6 +123,6 @@ public class PlayerController : MonoBehaviour
 
 	public void CollectStar(string name)
 	{
-		gameManager.AddStar(name);
+		GameManager.instance.AddStar(name);
 	}
 }
