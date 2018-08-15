@@ -1,14 +1,36 @@
 fileFormatVersion: 2
-guid: 6a2a136781583594f8b3e9799841631a
+guid: 36845916c44204b4bae70196f4f7f87e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: Circle
+    100002: half1
+    100004: half1.001
+    100006: half2
+    100008: half2.001
+    100010: //RootNode
+    400000: Circle
+    400002: half1
+    400004: half1.001
+    400006: half2
+    400008: half2.001
+    400010: //RootNode
     2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Circle
+    2300000: Circle
+    2300002: half1
+    2300004: half1.001
+    2300006: half2
+    2300008: half2.001
+    3300000: Circle
+    3300002: half1
+    3300004: half1.001
+    3300006: half2
+    3300008: half2.001
+    4300000: half1.001
+    4300002: half2.001
+    4300004: half2
+    4300006: half1
+    4300008: Circle
   externalObjects: {}
   materials:
     importMaterials: 1

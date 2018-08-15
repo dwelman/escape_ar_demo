@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="path" size="0.250000 0.250000" />
-    <ImageTarget name="start" size="0.250000 0.250000" />
-    <ImageTarget name="star" size="0.250000 0.250000" />
-    <ImageTarget name="bbd_logo" size="0.100000 0.043200" />
+    <ImageTarget name="surface_platform_ring" size="0.250000 0.250000" />
+    <ImageTarget name="surface_platform_normal" size="0.250000 0.250000" />
+    <ImageTarget name="surface_platform_long" size="0.250000 0.250000" />
+    <ImageTarget name="wall_platform_ring" size="0.250000 0.250000" />
+    <ImageTarget name="wall_platform_long" size="0.250000 0.250000" />
+    <ImageTarget name="wall_platfiorm_normal" size="0.250000 0.250000" />
+    <ImageTarget name="wall_star_8" size="0.250000 0.250000" />
+    <ImageTarget name="wall_star_6" size="0.250000 0.250000" />
+    <ImageTarget name="wall_star_4" size="0.250000 0.250000" />
+    <ImageTarget name="surface_star_9" size="0.250000 0.250000" />
+    <ImageTarget name="surface_star_7" size="0.250000 0.250000" />
+    <ImageTarget name="surface_star_5" size="0.250000 0.250000" />
+    <ImageTarget name="surface_star_3" size="0.250000 0.250000" />
+    <ImageTarget name="wall_star_2" size="0.250000 0.250000" />
+    <ImageTarget name="surface_star_1" size="0.250000 0.250000" />
+    <ImageTarget name="wall_star_0" size="0.250000 0.250000" />
+    <ImageTarget name="surface_spawn" size="0.250000 0.250000" />
+    <ImageTarget name="wall_spawn" size="0.250000 0.250000" />
     <ImageTarget name="octopus_tattoo" size="0.050000 0.055600" />
     <ImageTarget name="owl_tattoo" size="0.050000 0.062602" />
-    <ImageTarget name="kingLogo_bw" size="0.200000 0.200000" />
   </Tracking>
 </QCARConfig>
