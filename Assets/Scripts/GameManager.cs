@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
 
 	private void CountStars()
 	{
+		starCount = 0;
 		for (int i = 0; i < 10; i++)
 		{
 			string starName = "star_" + i;
