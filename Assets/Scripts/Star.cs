@@ -25,7 +25,6 @@ public class Star : MonoBehaviour
 			PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
 			pc.CollectStar(name);
 			GetComponent<CapsuleCollider>().enabled = false;
-			//Play some particles
 			Destroy(gameObject);
 		}
 	}

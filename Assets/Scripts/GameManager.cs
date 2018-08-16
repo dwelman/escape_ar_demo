@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField]
 	private Text starCountText;
+	private int starCount;
 
 	// Use this for initialization
 	void Start()
@@ -26,20 +27,22 @@ public class GameManager : MonoBehaviour
 			if (PlayerPrefs.HasKey(starName))
 			{
 				stars[starName] = PlayerPrefs.GetInt(starName);
-				starCountText.text = "x " + i.ToString("00");
+				//starCountText.text = "x " + i.ToString("00");
 			}
 			else
 			{
 				PlayerPrefs.SetInt(starName, 0);
 			}
 		}
+		starCountText.text = "x " + starCount.ToString("00");
 	}
 
 	public void AddStar(string name)
 	{
 		PlayerPrefs.SetInt(name, 1);
-		int starNum = int.Parse(name.Remove(0, 5));
-		starCountText.text = "x " + starNum.ToString("00");
+		//int starNum = int.Parse(name.Remove(0, 5));
+		CountStars();
+		starCountText.text = "x " + starCount.ToString("00");
 	}
 
 	//You can use this to clear progress
@@ -61,5 +64,17 @@ public class GameManager : MonoBehaviour
 		// PlayerPrefs.SetInt("star_8", 0);
 		// PlayerPrefs.SetInt("star_9", 0);
 		starCountText.text = "x 00";
+	}
+
+	private void CountStars()
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			string starName = "star_" + i;
+			if (PlayerPrefs.HasKey(starName))
+			{
+				starCount += PlayerPrefs.GetInt(starName);
+			}
+		}
 	}
 }
