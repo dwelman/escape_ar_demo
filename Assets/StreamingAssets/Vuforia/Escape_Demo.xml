@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="platform_spawn" size="10.000000 10.000000" />
+    <ImageTarget name="star_two" size="10.000000 10.000000" />
+    <ImageTarget name="star_one" size="10.000000 10.000000" />
+    <ImageTarget name="platform_ring" size="10.000000 10.000000" />
+    <ImageTarget name="platform_normal" size="10.000000 10.000000" />
+    <ImageTarget name="platform_long" size="10.000000 10.000000" />
+    <ImageTarget name="star_zero" size="10.000000 10.000000" />
+    <ImageTarget name="bbd_star" size="10.000000 10.000000" />
+    <ImageTarget name="apk_target" size="10.000000 10.000000" />
     <ImageTarget name="star_4" size="0.250000 0.250000" />
     <ImageTarget name="star_3" size="0.250000 0.250000" />
     <ImageTarget name="star_2" size="0.250000 0.250000" />
