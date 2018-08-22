@@ -7,6 +7,9 @@ public class Star : MonoBehaviour
 	[SerializeField]
 	string name;
 
+	[SerializeField]
+	private GameObject burstSystem;
+
 	private void Start()
 	{
 		if (PlayerPrefs.HasKey(name))
@@ -25,6 +28,8 @@ public class Star : MonoBehaviour
 			PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
 			pc.CollectStar(name);
 			GetComponent<CapsuleCollider>().enabled = false;
+			GameObject partSyst = (GameObject) Instantiate(burstSystem, transform.position, Quaternion.identity);
+			Destroy(partSyst, 0.5f);	
 			Destroy(gameObject);
 		}
 	}

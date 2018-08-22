@@ -188,6 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fa6a4b15518fe49a4a939b520e77ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
+  burstSystem: {fileID: 1022440791083542, guid: c89d80032c1063f4ba915598d47c4fc0,
+    type: 2}
 --- !u!136 &136938316796863030
 CapsuleCollider:
   m_ObjectHideFlags: 1
